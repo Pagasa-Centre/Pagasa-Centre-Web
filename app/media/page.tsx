@@ -17,6 +17,10 @@ interface Media {
   thumbnail_url: string;
 }
 
+interface MediaResponse{
+  media : Media[]
+}
+
 export default function MediaPage() {
   const [media, setMedia] = useState<Media[]>([]);
   const [loading, setLoading] = useState(true);
@@ -31,7 +35,7 @@ export default function MediaPage() {
   const fetchMedia = async () => {
     try {
       const response = await fetch('http://localhost:8080/api/v1/media');
-      const data = await response.json();
+      const data:MediaResponse = await response.json();
       setMedia(data.media);
     } catch (err) {
       setError('Failed to load media content');
