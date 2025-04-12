@@ -8,9 +8,11 @@ import { Label } from '@/components/ui/label';
 import { getUser, getToken } from '@/lib/auth';
 import {apiUrl} from "@/lib/api";
 import {UpdateUserDetailsResponse, UserDetails} from "@/types/user";
+import {useAuth} from "@/lib/auth-context";
 
 export default function ProfilePage() {
   const router = useRouter();
+  const { user: authUser, setUser } = useAuth();
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -25,7 +27,7 @@ export default function ProfilePage() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const user = getUser();
+    const user = authUser; // ✅ use context instead of localStorage
     const token = getToken();
 
     if (!user || !token) {
@@ -42,7 +44,7 @@ export default function ProfilePage() {
       phone_number: user.phone_number || '',
       outreach_id: user.outreach_id || '',
     });
-  }, [router]);
+  }, [authUser, router]); // ✅ watch authUser
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,8 +65,19 @@ export default function ProfilePage() {
 
       const data:UpdateUserDetailsResponse = await response.json();
 
+
       if (!response.ok) {
         throw new Error(data.message || 'Failed to update profile');
+      }
+
+      const updatedUser = data.user;
+
+      if (updatedUser) {
+        // Store in localStorage
+        localStorage.setItem('user', JSON.stringify(updatedUser));
+
+        // ✅ Update context so Navbar reflects new name instantly
+        setUser(updatedUser);
       }
 
       let user: UserDetails | null = null;
