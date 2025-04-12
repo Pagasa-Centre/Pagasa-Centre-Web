@@ -58,7 +58,7 @@ export default function AboutPage() {
               <h2 className="text-4xl font-bold mb-8">Our Story</h2>
               <div className="space-y-6 text-gray-600">
                 <p>
-                  Pag-Asa Centre is a non-denominational church, established by God in the year 2007. As a church, we are passionate about God's presence, possess sincere integrity and a deep craving to reach the lost, walk in a spirit-filled faith, grounded in humility and brokenness. We are a registered charity institution by the Charity Commission of the United Kingdom.
+                  Pag-Asa Centre is a non-denominational church, established by God in the year 2007. As a church, we are passionate about God&apos;s presence, possess sincere integrity and a deep craving to reach the lost, walk in a spirit-filled faith, grounded in humility and brokenness. We are a registered charity institution by the Charity Commission of the United Kingdom.
                 </p>
                 <p>
                   Pag-Asa Centre has a God-ordained mandate to present the Gospel of Christ Jesus to the lost, share the love of God, give hope to the hopeless, provide humanitarian aid to the hurting peoples, bring them to membership in His church, help them grow to Christ-like maturity, equip them for the ministry and send them in their life missions.
@@ -87,7 +87,7 @@ export default function AboutPage() {
                   G12 was conceived by Pastor César Castellanos in 1983, after receiving a vision from God instructing him to implement this structure of small groups of 12.
                 </p>
                 <p>
-                  It was first modelled in his church - MCI in Bogotá, Colombia - which he started in his living room with just eight people and now, through the goodness and grace of God, has grown to over 150,000 members. G12, which stands for Government of 12, represents each disciple accepting Jesus Christ as the Lord of their life. It is focused on Jesus' command to the church to 'go and make disciples of all nations.'
+                  It was first modelled in his church - MCI in Bogotá, Colombia - which he started in his living room with just eight people and now, through the goodness and grace of God, has grown to over 150,000 members. G12, which stands for Government of 12, represents each disciple accepting Jesus Christ as the Lord of their life. It is focused on Jesus&apos; command to the church to &apos;go and make disciples of all nations.&apos;
                 </p>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function AboutPage() {
               <h3 className="text-2xl font-bold mb-1">Pstr. Shay Ambat</h3>
               <p className="text-gray-400 uppercase tracking-wider text-sm mb-3">PASTORA</p>
               <p className="text-gray-300 text-center mb-4">
-                Leading with grace and nurturing our community's faith.
+                Leading with grace and nurturing our community&apos;s faith.
               </p>
               <a href="#" className="text-white hover:text-gray-300 transition-colors">
                 <Facebook className="h-6 w-6" />
@@ -176,7 +176,7 @@ export default function AboutPage() {
               <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
                 <Cross className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4">1. WE BELIEVE IN GOD! "ELOHIM"</h3>
+              <h3 className="text-xl font-bold mb-4">1. WE BELIEVE IN GOD! &quot;ELOHIM&quot;</h3>
               <p className="text-gray-600 mb-4">
                 We believe that there is only one GOD eternally existent in three persons – Father, Son and Holy Spirit. He is the Creator of Heaven and Earth.
               </p>
