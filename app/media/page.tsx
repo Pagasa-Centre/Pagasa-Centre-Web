@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Search, Filter, Calendar, Clock } from 'lucide-react';
 import { format } from 'date-fns';
 import {Media, MediaResponse} from "@/types/media";
+import {apiUrl} from "@/lib/api";
 
 
 
@@ -23,7 +24,7 @@ export default function MediaPage() {
 
   const fetchMedia = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/v1/media');
+      const response = await fetch(apiUrl('/media'));
       const data:MediaResponse = await response.json();
       setMedia(data.media);
     } catch (err) {

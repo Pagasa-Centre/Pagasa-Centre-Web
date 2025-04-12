@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { getUser, getToken } from '@/lib/auth';
+import {apiUrl} from "@/lib/api";
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -50,7 +51,7 @@ export default function ProfilePage() {
 
     try {
       const token = getToken();
-      const response = await fetch('http://localhost:8080/api/v1/user/update-details', {
+      const response = await fetch(apiUrl('/user/update-details'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
