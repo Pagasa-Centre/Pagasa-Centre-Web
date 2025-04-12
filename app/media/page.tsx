@@ -6,20 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Search, Filter, Calendar, Clock } from 'lucide-react';
 import { format } from 'date-fns';
+import {Media, MediaResponse} from "@/types/media";
 
-interface Media {
-  id: number;
-  title: string;
-  description: string;
-  youtube_video_id: string;
-  category: string;
-  published_at: string;
-  thumbnail_url: string;
-}
 
-interface MediaResponse{
-  media : Media[]
-}
 
 export default function MediaPage() {
   const [media, setMedia] = useState<Media[]>([]);
