@@ -30,7 +30,7 @@ export default function MediaPage() {
 
   const fetchMedia = async () => {
     try {
-      const response = await fetch('http://your-api-url/api/v1/media');
+      const response = await fetch('http://localhost:8080/api/v1/media');
       const data = await response.json();
       setMedia(data.media);
     } catch (err) {

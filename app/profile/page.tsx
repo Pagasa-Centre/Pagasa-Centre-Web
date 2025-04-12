@@ -50,8 +50,8 @@ export default function ProfilePage() {
 
     try {
       const token = getToken();
-      const response = await fetch('http://your-api-url/user/update', {
-        method: 'PUT',
+      const response = await fetch('http://localhost:8080/user/update-details', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
