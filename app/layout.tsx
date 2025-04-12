@@ -3,8 +3,9 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
+import { AuthProvider } from '@/lib/auth-context'; // 👈 import your new auth context
 
-const poppins = Poppins({ 
+const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   display: 'swap',
@@ -16,17 +17,19 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+      <html lang="en" className="scroll-smooth">
       <body className={poppins.className}>
+      <AuthProvider> {/* 👈 wrap everything inside AuthProvider */}
         <Navbar />
         {children}
         <Footer />
+      </AuthProvider>
       </body>
-    </html>
+      </html>
   );
 }

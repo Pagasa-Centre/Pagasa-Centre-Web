@@ -13,7 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { isAuthenticated, getUser, clearAuthData } from '@/lib/auth';
+import { useAuth } from '@/lib/auth-context';
 
 const navItems = [
   { label: 'HOME', href: '/' },
@@ -28,124 +28,110 @@ const navItems = [
 export function Navbar() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState<any>(null);
-
-  useEffect(() => {
-    setIsLoggedIn(isAuthenticated());
-    setUser(getUser());
-  }, []);
-
-  const handleLogout = () => {
-    clearAuthData();
-    setIsLoggedIn(false);
-    setUser(null);
-    router.push('/');
-  };
+  const { user, logout } = useAuth();
 
   const AuthButtons = () => {
-    if (isLoggedIn && user) {
+    if (user) {
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white">
-              <User className="h-4 w-4 mr-2" />
-              {user.first_name}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-56">
-            <Link href="/profile">
-              <DropdownMenuItem>
-                <Settings className="mr-2 h-4 w-4" />
-                <span>Profile Settings</span>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white">
+                <User className="h-4 w-4 mr-2" />
+                {user.first_name}
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              <Link href="/profile">
+                <DropdownMenuItem>
+                  <Settings className="mr-2 h-4 w-4" />
+                  <span>Profile Settings</span>
+                </DropdownMenuItem>
+              </Link>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={() => { logout(); router.push('/'); }}>
+                <LogOut className="mr-2 h-4 w-4" />
+                <span>Log out</span>
               </DropdownMenuItem>
-            </Link>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={handleLogout}>
-              <LogOut className="mr-2 h-4 w-4" />
-              <span>Log out</span>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+            </DropdownMenuContent>
+          </DropdownMenu>
       );
     }
 
     return (
-      <div className="flex items-center space-x-4">
-        <Link href="/auth/login">
-          <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white">
-            Login
-          </Button>
-        </Link>
-        <Link href="/auth/register">
-          <Button className="bg-black text-white hover:bg-gray-800">
-            Sign Up
-          </Button>
-        </Link>
-      </div>
+        <div className="flex items-center space-x-4">
+          <Link href="/auth/login">
+            <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white">
+              Login
+            </Button>
+          </Link>
+          <Link href="/auth/register">
+            <Button className="bg-black text-white hover:bg-gray-800">
+              Sign Up
+            </Button>
+          </Link>
+        </div>
     );
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0">
-            <Link href="/">
-              <Image
-                src="/logo.png"
-                alt="Pag-Asa Centre Logo"
-                width={60}
-                height={60}
-                className="rounded-full"
-                priority
-              />
-            </Link>
-          </div>
-          
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
-              >
-                {item.label}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            <div className="flex-shrink-0">
+              <Link href="/">
+                <Image
+                    src="/logo.png"
+                    alt="Pag-Asa Centre Logo"
+                    width={60}
+                    height={60}
+                    className="rounded-full"
+                    priority
+                />
               </Link>
-            ))}
-            <AuthButtons />
-          </div>
+            </div>
 
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-gray-900"
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900"
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="flex flex-col space-y-2 px-3 pt-4">
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                  <Link
+                      key={item.href}
+                      href={item.href}
+                      className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+              ))}
               <AuthButtons />
+            </div>
+
+            <div className="md:hidden">
+              <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="text-gray-700 hover:text-gray-900"
+              >
+                <Menu className="h-6 w-6" />
+              </button>
             </div>
           </div>
         </div>
-      )}
-    </nav>
+
+        {isOpen && (
+            <div className="md:hidden">
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                {navItems.map((item) => (
+                    <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900"
+                    >
+                      {item.label}
+                    </Link>
+                ))}
+                <div className="flex flex-col space-y-2 px-3 pt-4">
+                  <AuthButtons />
+                </div>
+              </div>
+            </div>
+        )}
+      </nav>
   );
 }

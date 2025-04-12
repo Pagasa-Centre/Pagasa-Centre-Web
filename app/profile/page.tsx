@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { getUser, getToken } from '@/lib/auth';
 import {apiUrl} from "@/lib/api";
+import {UpdateUserDetailsResponse, UserDetails} from "@/types/user";
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -60,10 +61,20 @@ export default function ProfilePage() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      const data:UpdateUserDetailsResponse = await response.json();
 
       if (!response.ok) {
         throw new Error(data.message || 'Failed to update profile');
+      }
+
+      let user: UserDetails | null = null;
+      if (data.user) {
+        user = data.user;
+      }
+
+      // Store user only if it exists
+      if (user) {
+        localStorage.setItem('user', JSON.stringify(user));
       }
 
       setSuccess('Profile updated successfully');

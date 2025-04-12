@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {apiUrl} from "@/lib/api";
+import {RegisterResponse} from "@/types/user";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -40,7 +41,7 @@ export default function RegisterPage() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      const data:RegisterResponse = await response.json();
 
       if (!response.ok) {
         throw new Error(data.message || 'Registration failed');
