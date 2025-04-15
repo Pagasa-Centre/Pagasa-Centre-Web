@@ -49,7 +49,7 @@ export default function MediaPage() {
       <section className="relative min-h-[60vh] flex items-center justify-center bg-black text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1505775561242-727b7fba20f0"
+            src="https://cdn.prod.website-files.com/6469d76a492ea69c34c883f8/646a9573b39363e2e3ea484e_271587831_4673974239357052_7616107780939234801_n.jpg"
             alt="Media Library"
             fill
             className="object-cover"

@@ -10,17 +10,14 @@ export default function AboutPage() {
       <section className="relative min-h-screen flex items-center">
         {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src="https://example.com/placeholder-video.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-black/60" />
+          <img
+              src="https://cdn.prod.website-files.com/6469d767492ea69c34c8827d/6529661488ab1e34aae7057a_WhatsApp%20Image%202023-10-05%20at%2015.31.38.jpeg"
+              alt="Background"
+              className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
+
 
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

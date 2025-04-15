@@ -11,7 +11,7 @@ export default function MinistriesPage() {
       <section className="relative min-h-[60vh] flex items-center justify-center bg-black text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1511649475669-e288648b2339"
+            src="https://cdn.prod.website-files.com/6469d76a492ea69c34c883f8/652968191c8b282069dce559_WhatsApp%20Image%202023-10-05%20at%2015.31.40%20(1).jpeg"
             alt="Ministries Hero"
             fill
             className="object-cover"
