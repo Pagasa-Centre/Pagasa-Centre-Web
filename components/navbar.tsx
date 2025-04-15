@@ -80,10 +80,10 @@ export function Navbar() {
             <div className="flex-shrink-0">
               <Link href="/">
                 <Image
-                    src="/logo.png"
+                    src="https://cdn.prod.website-files.com/6469d767492ea69c34c8827d/65299a0164ab20fa4a09210f_pagasa_logo.png"
                     alt="Pag-Asa Centre Logo"
-                    width={60}
-                    height={60}
+                    width={70}
+                    height={70}
                     className="rounded-full"
                     priority
                 />
