@@ -35,7 +35,7 @@ export function Navbar() {
       return (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white">
+              <Button variant="outline" className="border-black text-black  hover:bg-green-600 hover:text-white">
                 <User className="h-4 w-4 mr-2" />
                 {user.first_name}
               </Button>

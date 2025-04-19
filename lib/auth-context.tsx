@@ -7,6 +7,7 @@ import { isAuthenticated, getUser, clearAuthData } from '@/lib/auth';
 export type AuthContextType = {
     user: UserDetails | null;
     login: (token: string, user: UserDetails) => void;
+    register: (token: string, user: UserDetails) => void;
     logout: () => void;
     setUser: (user: UserDetails | null) => void; // ✅ new
 };
@@ -28,13 +29,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(user);
     };
 
+    const register = (token: string, user: UserDetails) => {
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(user));
+        setUser(user);
+    };
+
     const logout = () => {
         clearAuthData();
         setUser(null);
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout, setUser}}>
+        <AuthContext.Provider value={{ user, login,register, logout, setUser}}>
             {children}
         </AuthContext.Provider>
     );
