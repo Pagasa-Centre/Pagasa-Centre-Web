@@ -92,7 +92,7 @@ export function Footer() {
                   placeholder="Email"
                   className="bg-transparent border-white/20 text-white placeholder:text-gray-400"
               />
-              <Button className="bg-[#65A30D] hover:bg-[#4d7c0f] text-white">
+              <Button className="bg-green-600 text-white hover:text-black hover:bg-green-600">
                 SUBSCRIBE
               </Button>
             </div>
@@ -159,6 +159,14 @@ export function Footer() {
           {/* Copyright */}
           <div className="text-center text-sm text-gray-400">
             <p>© {new Date().getFullYear()} Pag-Asa Centre. All rights reserved.</p>
+            <p>Designed & Developed by
+              <a
+                  href="https://goldliontechnologies.webflow.io/"
+                  className=" text-yellow-400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+              > Goldlion Technologies</a>
+            </p>
           </div>
         </div>
       </footer>
