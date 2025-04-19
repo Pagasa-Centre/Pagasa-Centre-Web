@@ -45,7 +45,7 @@ export default function AboutPage() {
             <Button size="lg" variant="default" className="bg-white text-black hover:bg-gray-100">
               GET INVOLVED
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+            <Button size="lg" variant="outline" className="text-white border-white bg-black hover:bg-green-600 hover:border-green-600">
               OUR PASTORS
             </Button>
           </div>
@@ -99,6 +99,9 @@ export default function AboutPage() {
                 </p>
                 <p>
                   It was first modelled in his church - MCI in Bogotá, Colombia - which he started in his living room with just eight people and now, through the goodness and grace of God, has grown to over 150,000 members. G12, which stands for Government of 12, represents each disciple accepting Jesus Christ as the Lord of their life. It is focused on Jesus&apos; command to the church to &apos;go and make disciples of all nations.&apos;
+                </p>
+                <p>
+                  The overall aim of G12 is for everyone to learn about and experience first-hand the transformative power of Jesus' love. Great transformation and growth has been evident and present in churches that have followed this example of mentoring groups of 12.
                 </p>
               </div>
             </div>
