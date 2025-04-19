@@ -223,6 +223,102 @@ export default function AboutPage() {
               </p>
               <p className="text-sm text-gray-500">ROMANS 3:23, 5:12; EPHESIANS 2:1</p>
             </div>
+
+            {/* Statement 5 */}
+            <div className="bg-white p-8 rounded-lg border">
+              <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
+                <Sun className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">5. WE BELIEVE THE NEED FOR THE NEW BIRTH THROUGH THE HOLY SPIRIT IN CHRIST</h3>
+              <p className="text-gray-600 mb-4">
+                We believe that good works are not the means of salvation but are the expected product in the life of a true believer in Christ. It is every believer’s responsibility to pursue a life of good works through the power of the indwelling Holy Spirit.
+              </p>
+              <p className="text-sm text-gray-500">JOHN 3:1-8; 2 CORINTHIANS 5:17</p>
+            </div>
+
+            {/* Statement 6 */}
+            <div className="bg-white p-8 rounded-lg border">
+              <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
+                <Users className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">6. WE BELIEVE IN THE SECOND COMING OF CHRIST</h3>
+              <p className="text-gray-600 mb-4">
+                2 PHASES
+              </p>
+              <p className="text-sm text-gray-500">MATTHEW 24:14-31; LUKE 21:34-36; 1 THESSALONIANS 4:16-17; ACTS 1:9-11; REVELATION 19:11-21</p>
+            </div>
+
+            {/* Statement 7 */}
+            <div className="bg-white p-8 rounded-lg border">
+              <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
+                <Sun className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">7. WE BELIEVE IN HEAVEN & HELL</h3>
+              <p className="text-gray-600 mb-4">
+                We believe that water baptism by immersion is an act of obedience to Christ’s command. It is a public confession of our personal faith in Jesus Christ.
+              </p>
+              <p className="text-sm text-gray-500">LUKE 16:19-23; JOHN 5:25-29; REVELATION 20:13-15, 21:8</p>
+            </div>
+
+            {/* Statement 8 */}
+            <div className="bg-white p-8 rounded-lg border">
+              <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
+                <Users className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">8. WE BELIEVE IN THE BAPTISM OF WATER AND THE BAPTISM IN THE HOLY SPIRIT</h3>
+              <p className="text-gray-600 mb-4">
+                Public declaration of the new identity in Christ & the baptism of the Holy Spirit for the anointing of power to be witness for Christ Jesus.
+              </p>
+              <p className="text-sm text-gray-500">MATTHEW 3:13-15; ROMANS 6:3-8; ACTS 1:8, 2:1-47; MATTHEW 3:11</p>
+            </div>
+
+            {/* Statement 9 */}
+            <div className="bg-white p-8 rounded-lg border">
+              <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
+                <Sun className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">9. WE BELIEVE IN THE SANCTITY OF THE FAMILY</h3>
+              <p className="text-gray-600 mb-4">
+                We believe that the family is a divine institution ordained by God. It is a cornerstone of society and should be a reflection of God's own eternal love.
+              </p>
+              <p className="text-sm text-gray-500">EXODUS 20:12; COLOSSIANS 3:20-21; 1 TIMOTHY 3:4; EPHESIANS 6:1-4; ACTS 10:2; JOSHUA 24:15</p>
+            </div>
+
+            {/* Statement 10 */}
+            <div className="bg-white p-8 rounded-lg border">
+              <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
+                <Users className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">10. WE BELIEVE IN THE SANCTITY OF MARRIAGE</h3>
+              <p className="text-gray-600 mb-4">
+                We believe that marriage is a sacred institution ordained by God as a lifelong union between one man and one woman. It is a reflection of the eternal love between God and His people.
+              </p>
+              <p className="text-sm text-gray-500">GENESIS 2:21-25; ISAIAH 62:5</p>
+            </div>
+
+            {/* Statement 11 */}
+            <div className="bg-white p-8 rounded-lg border">
+              <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
+                <Sun className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">11. WE BELIEVE IN THE GREAT COMMISSION</h3>
+              <p className="text-gray-600 mb-4">
+                We understand the Great Commission as a mandate from God to share the Gospel with all people, both near and far, and to make disciples who will in turn make disciples.
+              </p>
+              <p className="text-sm text-gray-500">MATTHEW 28:18-20; MARK 16:14-18</p>
+            </div>
+
+            {/* Statement 12 */}
+            <div className="bg-white p-8 rounded-lg border">
+              <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
+                <Users className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">12. WE BELIEVE THAT ALL TRUE BORN AGAIN CHRISTIANS ARE OUR BRETHREN</h3>
+              <p className="text-gray-600 mb-4">
+                We are united by our common faith in Jesus Christ and our shared experience of salvation. We are called to work together to advance the kingdom of God.
+              </p>
+              <p className="text-sm text-gray-500">JOHN 13:34-35, 15:9-13, 17; 1 JOHN 3:18; GALATIANS 5:13; 1 PETER 4:8; ROMANS 12:10</p>
+            </div>
           </div>
         </div>
       </section>
