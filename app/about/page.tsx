@@ -146,7 +146,7 @@ export default function AboutPage() {
                 <p className="text-gray-700 mb-4">
                   Guiding our spiritual journey with his wisdom and compassion.
                 </p>
-                <a href="#" className="text-black hover:text-gray-600 transition-colors">
+                <a href="https://www.facebook.com/profile.php?id=100092513013800" className="text-black hover:text-gray-600 transition-colors">
                   <Facebook className="h-6 w-6" />
                 </a>
               </div>
@@ -170,7 +170,7 @@ export default function AboutPage() {
                 <p className="text-gray-700 mb-4">
                   Leading with grace and nurturing our community&apos;s faith.
                 </p>
-                <a href="#" className="text-black hover:text-gray-600 transition-colors">
+                <a href="https://www.facebook.com/shirley.padayaoambat" className="text-black hover:text-gray-600 transition-colors">
                   <Facebook className="h-6 w-6" />
                 </a>
               </div>
