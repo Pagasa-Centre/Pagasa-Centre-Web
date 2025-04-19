@@ -64,7 +64,7 @@ export function Footer() {
             <div className="flex items-start gap-6">
               <div className="relative w-20 h-20 flex-shrink-0">
                 <Image
-                    src="/logo.png"
+                    src="https://cdn.prod.website-files.com/6469d767492ea69c34c8827d/65299a0164ab20fa4a09210f_pagasa_logo.png"
                     alt="Pag-Asa Centre Logo"
                     width={80}
                     height={80}
