@@ -101,7 +101,6 @@ export default function AboutPage() {
       </section>
 
       {/* Meet Our Pastors Section */}
-      {/* Meet Our Pastors Section */}
       <section className="py-24 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -122,7 +121,7 @@ export default function AboutPage() {
                     src="https://cdn.prod.website-files.com/6469d767492ea69c34c8827d/646a8c76552ae1f2c78c4c47_Pastor%20Doc%202.jpg"
                     alt="Dr. Godofredo Ambat"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                 />
               </div>
               <div className="p-6">
@@ -146,7 +145,7 @@ export default function AboutPage() {
                     src="https://cdn.prod.website-files.com/6469d767492ea69c34c8827d/646a8dadb39363e2e3e3f091_Pastora%20Shay.jpg"
                     alt="Pstr. Shay Ambat"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                 />
               </div>
               <div className="p-6">
