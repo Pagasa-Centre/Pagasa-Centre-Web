@@ -81,7 +81,7 @@ export default function RegisterPage() {
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="first_name">First name</Label>
+                <Label htmlFor="first_name" >First name</Label>
                 <div className="mt-2">
                   <Input
                     id="first_name"

@@ -80,17 +80,17 @@ export function Footer() {
               <Input
                   type="text"
                   placeholder="First name"
-                  className="bg-transparent border-white/20 text-white placeholder:text-gray-400"
+                  className="bg-transparent border-white/20 text-white placeholder:text-gray-400 bg-white"
               />
               <Input
                   type="text"
                   placeholder="Surname"
-                  className="bg-transparent border-white/20 text-white placeholder:text-gray-400"
+                  className="bg-transparent border-white/20 text-white placeholder:text-gray-400 bg-white"
               />
               <Input
                   type="email"
                   placeholder="Email"
-                  className="bg-transparent border-white/20 text-white placeholder:text-gray-400"
+                  className="bg-transparent border-white/20 text-white placeholder:text-gray-400 bg-white"
               />
               <Button className="bg-green-600 text-white hover:text-black hover:bg-green-600">
                 SUBSCRIBE
