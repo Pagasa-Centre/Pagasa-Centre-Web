@@ -25,8 +25,8 @@ export default function ContactPage() {
   return (
     <main>
       {/* Contact Form Section */}
-      <section className="min-h-screen bg-black text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-black text-white pt-32 pb-24 min-h-[100vh] flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Contact Info */}
             <div>
