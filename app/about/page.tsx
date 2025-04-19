@@ -1,6 +1,20 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Facebook, Dribbble as Bible, Cross, Sun, Users } from 'lucide-react';
+import {
+  Cross,
+  BookOpenText,
+  Users,
+  Sun,
+  Flame,
+  HeartHandshake,
+  Globe,
+  HandHelping,
+  Church,
+  UserCheck,
+  Heart,
+  UserPlus,
+    Facebook
+} from 'lucide-react';
 import { LocationsSection } from '@/components/locations-section';
 import { SocialMediaSection } from '@/components/social-media-section';
 
@@ -191,7 +205,7 @@ export default function AboutPage() {
             {/* Statement 2 */}
             <div className="bg-white p-8 rounded-lg border">
               <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
-                <Cross className="h-6 w-6 text-white" />
+                <Flame className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4">2. WE BELIEVE IN THE TRIUNE GOD</h3>
               <p className="text-gray-600 mb-4">
@@ -203,7 +217,7 @@ export default function AboutPage() {
             {/* Statement 3 */}
             <div className="bg-white p-8 rounded-lg border">
               <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
-                <Sun className="h-6 w-6 text-white" />
+                <BookOpenText className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4">3. WE BELIEVE IN THE INFALLIABILITY & IMMUTABILITY OF THE SCRIPTURE</h3>
               <p className="text-gray-600 mb-4">
@@ -227,7 +241,7 @@ export default function AboutPage() {
             {/* Statement 5 */}
             <div className="bg-white p-8 rounded-lg border">
               <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
-                <Sun className="h-6 w-6 text-white" />
+                <Flame className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4">5. WE BELIEVE THE NEED FOR THE NEW BIRTH THROUGH THE HOLY SPIRIT IN CHRIST</h3>
               <p className="text-gray-600 mb-4">
@@ -239,7 +253,7 @@ export default function AboutPage() {
             {/* Statement 6 */}
             <div className="bg-white p-8 rounded-lg border">
               <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
-                <Users className="h-6 w-6 text-white" />
+                <Sun className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4">6. WE BELIEVE IN THE SECOND COMING OF CHRIST</h3>
               <p className="text-gray-600 mb-4">
@@ -251,7 +265,7 @@ export default function AboutPage() {
             {/* Statement 7 */}
             <div className="bg-white p-8 rounded-lg border">
               <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
-                <Sun className="h-6 w-6 text-white" />
+                <Church className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4">7. WE BELIEVE IN HEAVEN & HELL</h3>
               <p className="text-gray-600 mb-4">
@@ -263,7 +277,7 @@ export default function AboutPage() {
             {/* Statement 8 */}
             <div className="bg-white p-8 rounded-lg border">
               <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
-                <Users className="h-6 w-6 text-white" />
+                <UserPlus className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4">8. WE BELIEVE IN THE BAPTISM OF WATER AND THE BAPTISM IN THE HOLY SPIRIT</h3>
               <p className="text-gray-600 mb-4">
@@ -275,7 +289,7 @@ export default function AboutPage() {
             {/* Statement 9 */}
             <div className="bg-white p-8 rounded-lg border">
               <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
-                <Sun className="h-6 w-6 text-white" />
+                <Heart className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4">9. WE BELIEVE IN THE SANCTITY OF THE FAMILY</h3>
               <p className="text-gray-600 mb-4">
@@ -287,7 +301,7 @@ export default function AboutPage() {
             {/* Statement 10 */}
             <div className="bg-white p-8 rounded-lg border">
               <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
-                <Users className="h-6 w-6 text-white" />
+                <HeartHandshake className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4">10. WE BELIEVE IN THE SANCTITY OF MARRIAGE</h3>
               <p className="text-gray-600 mb-4">
@@ -299,7 +313,7 @@ export default function AboutPage() {
             {/* Statement 11 */}
             <div className="bg-white p-8 rounded-lg border">
               <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
-                <Sun className="h-6 w-6 text-white" />
+                <Globe className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4">11. WE BELIEVE IN THE GREAT COMMISSION</h3>
               <p className="text-gray-600 mb-4">
@@ -311,7 +325,7 @@ export default function AboutPage() {
             {/* Statement 12 */}
             <div className="bg-white p-8 rounded-lg border">
               <div className="bg-black rounded-full w-12 h-12 flex items-center justify-center mb-6">
-                <Users className="h-6 w-6 text-white" />
+                <HandHelping className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4">12. WE BELIEVE THAT ALL TRUE BORN AGAIN CHRISTIANS ARE OUR BRETHREN</h3>
               <p className="text-gray-600 mb-4">
