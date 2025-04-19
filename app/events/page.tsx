@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Calendar, Clock } from 'lucide-react';
 
 export default function EventsPage() {
+
+
   return (
     <main>
       {/* Hero Section */}

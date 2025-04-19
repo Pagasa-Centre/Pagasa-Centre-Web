@@ -25,10 +25,20 @@ export default function MediaPage() {
   const fetchMedia = async () => {
     try {
       const response = await fetch(apiUrl('/media'));
+
       const data:MediaResponse = await response.json();
-      setMedia(data.media);
+
+      if (!response.ok){
+        throw new Error(data.message)
+      }
+
+      if (data.media){
+        setMedia(data.media);
+      }
+
     } catch (err) {
-      setError('Failed to load media content');
+      console.error('Failed to fetch media:', err);
+      setError('Failed to load media content '+err);
     } finally {
       setLoading(false);
     }

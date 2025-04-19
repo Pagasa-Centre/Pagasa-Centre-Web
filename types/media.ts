@@ -9,5 +9,6 @@ export interface Media {
 }
 
 export interface MediaResponse{
-    media : Media[]
+    media? : Media[]
+    message:string
 }

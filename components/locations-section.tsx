@@ -14,7 +14,11 @@ export function LocationsSection() {
     const fetchOutreaches = async () => {
       try {
         const res = await fetch(apiUrl('/outreach'));
-        const data = await res.json();
+        const data:OutreachResponse = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data.message);
+        }
 
         if (data && Array.isArray(data.outreaches)) {
           const sorted = [
@@ -24,7 +28,8 @@ export function LocationsSection() {
           setOutreaches(sorted);
         }
       } catch (err) {
-        setError('Failed to load locations');
+        console.error('Failed to fetch locations:', err);
+        setError('Failed to load locations: '+err);
       }
     };
 
