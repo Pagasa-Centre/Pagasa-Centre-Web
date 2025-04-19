@@ -46,7 +46,6 @@ export function LocationsSection() {
           </div>
 
           {/* Main Location */}
-          {/* Main Location */}
           <div className="mb-16">
             <div className="bg-white rounded-xl overflow-hidden shadow-lg">
               <div className="grid grid-cols-1 lg:grid-cols-2">
