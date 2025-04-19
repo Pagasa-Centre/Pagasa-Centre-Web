@@ -18,7 +18,7 @@ export function OurStory() {
           </div>
           <div className="relative h-[600px]">
             <Image
-              src="https://images.unsplash.com/photo-1523803326055-13445f07d885"
+              src="https://cdn.prod.website-files.com/6469d767492ea69c34c8827d/66e5bb1badf8275599d0647d_450811109_7809954529092325_648064014306969300_n.jpg"
               alt="Church congregation"
               fill
               className="object-cover rounded-lg"

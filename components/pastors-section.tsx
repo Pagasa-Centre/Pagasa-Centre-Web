@@ -7,7 +7,7 @@ export function PastorsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative h-[600px]">
             <Image
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+              src="https://cdn.prod.website-files.com/6469d767492ea69c34c8827d/646a86db75058e8e00a97490_IMG_1650.JPG"
               alt="Dr. Ambat & Pstr. Shirley"
               fill
               className="object-cover rounded-lg"
