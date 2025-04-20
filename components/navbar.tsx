@@ -1,10 +1,9 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Menu, User, LogOut, Settings } from 'lucide-react';
+import {Menu, User, LogOut, Settings, LayoutDashboard} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -14,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/lib/auth-context';
+import {getToken, hasRole} from "@/lib/auth";
 
 const navItems = [
   { label: 'HOME', href: '/' },
@@ -27,8 +27,13 @@ const navItems = [
 
 export function Navbar() {
   const router = useRouter();
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
+
+  useEffect(() => {
+    setIsAdmin(hasRole('Admin'));
+  }, [router]);
 
   const AuthButtons = () => {
     if (user) {
@@ -41,6 +46,15 @@ export function Navbar() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
+              {isAdmin && (
+              <Link href="/portal">
+                <DropdownMenuItem>
+                  <LayoutDashboard className="mr-2 h-4 w-4" />
+                  <span>My Portal</span>
+                </DropdownMenuItem>
+              </Link>
+              )}
+              <DropdownMenuSeparator />
               <Link href="/profile">
                 <DropdownMenuItem>
                   <Settings className="mr-2 h-4 w-4" />

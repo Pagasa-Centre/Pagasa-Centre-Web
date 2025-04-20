@@ -6,6 +6,7 @@ export interface UserDetails {
     phone_number?: string;
     cell_leader_id?: string | null;
     outreach_id?: string;
+    roles: string[];
 }
 
 export interface RegisterResponse {

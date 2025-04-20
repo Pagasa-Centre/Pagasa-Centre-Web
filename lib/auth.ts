@@ -7,6 +7,7 @@ export interface User {
   phone_number: string;
   cell_leader_id?: string;
   outreach_id: string;
+  roles: string[];
 }
 
 // Helper functions
@@ -39,4 +40,9 @@ export function clearAuthData(): void {
 
 export function isAuthenticated(): boolean {
   return !!getToken();
+}
+
+export function hasRole(role: string): boolean {
+  const user = getUser();
+  return user?.roles?.includes(role) || false;
 }

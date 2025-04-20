@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { getUser, getToken } from '@/lib/auth';
+import {getUser, getToken, hasRole} from '@/lib/auth';
 import {apiUrl} from "@/lib/api";
 import {UpdateUserDetailsResponse, UserDetails} from "@/types/user";
 import {useAuth} from "@/lib/auth-context";
