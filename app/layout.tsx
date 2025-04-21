@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { Navbar } from '@/components/navbar';
 import {Footer} from '@/components/footer';
-import { AuthProvider } from '@/lib/auth-context'; // 👈 import your new auth context
+import { AuthProvider } from '@/lib/auth-context';
+import {Toaster} from "sonner"; // 👈 import your new auth context
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({
         {children}
         <Footer />
       </AuthProvider>
+      <Toaster />
       </body>
       </html>
   );

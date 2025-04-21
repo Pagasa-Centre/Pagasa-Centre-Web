@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { isAuthenticated, getToken } from '@/lib/auth';
 import { apiUrl } from '@/lib/api';
+import {toast} from "sonner";
 
 export default function ApplyForm({ ministry }: { ministry: any }) {
     const router = useRouter();
@@ -38,8 +39,18 @@ export default function ApplyForm({ ministry }: { ministry: any }) {
                 }),
             });
 
-            if (!response.ok) throw new Error('Failed to submit application');
-            router.push(`/ministries/${ministry.id}?application=success`);
+            if (!response.ok){
+                throw new Error('Failed to submit application');
+            }
+
+
+            toast.success('Application submitted successfully!', {
+                description: 'We will review your application and get back to you soon.',
+            });
+            // Wait a moment for the toast to be visible before redirecting
+            setTimeout(() => {
+                router.push(`/ministries/${ministry.id}`);
+            }, 4000);
         } catch (err) {
             setError(err instanceof Error ? err.message : 'Something went wrong');
         } finally {
