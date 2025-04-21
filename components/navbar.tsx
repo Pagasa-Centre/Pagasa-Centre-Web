@@ -32,8 +32,12 @@ export function Navbar() {
   const { user, logout } = useAuth();
 
   useEffect(() => {
-    setIsAdmin(hasRole('Admin'));
-  }, [router]);
+    if (user) {
+      setIsAdmin(hasRole('Admin'));
+    } else {
+      setIsAdmin(false);
+    }
+  }, [user]);
 
   const AuthButtons = () => {
     if (user) {

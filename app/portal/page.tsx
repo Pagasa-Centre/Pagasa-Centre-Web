@@ -5,25 +5,9 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { getToken, hasRole } from '@/lib/auth';
 import {apiUrl} from "@/lib/api";
+import {Approval, GetAllApprovalsResponse, GetAllPendingApprovalsResponse} from "@/types/approvals";
 
-interface UserDetails {
-  first_name: string;
-  last_name: string;
-  email: string;
-  birthday: string;
-  phone_number: string;
-  cell_leader_id?: string;
-  outreach_id: string;
-  roles: string[];
-}
 
-interface Approval {
-  id: string;
-  type: string;
-  requested_role: string;
-  status: string;
-  requester_details: UserDetails;
-}
 
 export default function PortalPage() {
   const router = useRouter();
@@ -32,7 +16,7 @@ export default function PortalPage() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (!hasRole('Admin')) {
+    if (!hasRole('Admin') || !hasRole('Admin')) {
       router.push('/');
       return;
     }
@@ -48,10 +32,15 @@ export default function PortalPage() {
           'Authorization': `Bearer ${token}`,
         },
       });
-      const data = await response.json();
+      const data:GetAllPendingApprovalsResponse = await response.json();
+
+      if (!response.ok){
+        throw new Error(data.message)
+      }
+
       setApprovals(data.approvals || []);
     } catch (err) {
-      setError('Failed to fetch approvals');
+      setError('Failed to fetch approvals: '+ err);
     } finally {
       setIsLoading(false);
     }
@@ -122,6 +111,7 @@ export default function PortalPage() {
                           {approval.requester_details.first_name} {approval.requester_details.last_name}
                         </h4>
                         <p className="text-sm text-gray-600">{approval.requester_details.email}</p>
+                        <p className="text-sm text-gray-600">{approval.requester_details.phone_number}</p>
                       </div>
                       <div className="px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-sm">
                         {approval.status}
@@ -134,6 +124,13 @@ export default function PortalPage() {
                       </p>
                       <p className="text-sm text-gray-600">
                         <span className="font-medium">Requested Role:</span> {approval.requested_role}
+                      </p>
+                      <br></br>
+                      <p className="text-sm text-gray-600">
+                        <span className="font-medium">Reason:</span>
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {approval.reason}
                       </p>
                     </div>
 

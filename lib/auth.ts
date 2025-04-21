@@ -44,5 +44,9 @@ export function isAuthenticated(): boolean {
 
 export function hasRole(role: string): boolean {
   const user = getUser();
-  return user?.roles?.includes(role) || false;
+  if (!user?.roles) return false;
+
+  return user.roles.some(userRole =>
+      userRole === role ||  userRole.includes("Ministry Leader")
+  );
 }
