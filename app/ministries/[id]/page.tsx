@@ -15,12 +15,13 @@ export async function generateStaticParams() {
 }
 
 interface MinistryPageProps {
-  params: {
+  params: Promise<{
     id: string; // This is ministry ID
-  };
+  }>;
 }
 
-export default async function MinistryPage({ params }: MinistryPageProps) {
+export default async function MinistryPage(props: MinistryPageProps) {
+  const params = await props.params;
   const res = await fetch(apiUrl('/ministry'), { cache: 'no-store' });
   const data = await res.json();
 
