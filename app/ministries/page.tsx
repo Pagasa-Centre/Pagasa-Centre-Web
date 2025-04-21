@@ -2,9 +2,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Clock, Users } from 'lucide-react';
-import { ministries } from '@/lib/ministries';
+import {GetAllMinistriesResponse, Ministry} from '@/types/ministries';
+import {apiUrl} from "@/lib/api"; // or wherever you define your types
 
-export default function MinistriesPage() {
+async function getMinistries(): Promise<Ministry[]> {
+  const res = await fetch(apiUrl('/ministry'), { cache: 'no-store' });
+  const data:GetAllMinistriesResponse = await res.json();
+  return data.ministries || [];
+}
+
+export default async function MinistriesPage() {
+  const ministries = await getMinistries();
+
   return (
     <main>
       {/* Hero Section */}
@@ -33,42 +42,43 @@ export default function MinistriesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {ministries.map((ministry) => {
-              const IconComponent = ministry.icon;
               return (
-                <Link 
-                  key={ministry.slug}
-                  href={`/ministries/${ministry.slug}`}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.02]"
-                >
-                  <div className="relative h-64">
-                    <Image
-                      src={ministry.image}
-                      alt={ministry.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4">
-                      <IconComponent className="h-6 w-6 text-white" />
+                  <Link
+                      key={ministry.id}
+                      href={`/ministries/${ministry.id}`}
+                      className="bg-white rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.02]"
+                  >
+                    <div className="relative h-64">
+                      <Image
+                          src={ministry.thumbnail_url || '/placeholder.jpg'}
+                          alt={ministry.name}
+                          fill
+                          className="object-cover"
+                      />
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{ministry.title}</h3>
-                    <p className="text-gray-600 mb-4">{ministry.shortDescription}</p>
-                    <div className="space-y-2 mb-6">
-                      <div className="flex items-center gap-2 text-sm text-gray-500">
-                        <Clock className="h-4 w-4" />
-                        <span>{ministry.time}</span>
+                    <div className="p-6">
+                      <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4">
+                      <span className="text-white font-bold text-lg">
+                        {ministry.name[0]}
+                      </span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-gray-500">
-                        <Users className="h-4 w-4" />
-                        <span>Led by {ministry.leader.name}</span>
+                      <h3 className="text-xl font-bold mb-2">{ministry.name}</h3>
+                      <p className="text-gray-600 mb-4">{ministry.short_description}</p>
+                      <div className="space-y-2 mb-6">
+                        <div className="flex items-center gap-2 text-sm text-gray-500">
+                          <Clock className="h-4 w-4" />
+                          <span>{ministry.start_time}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-gray-500">
+                          <Users className="h-4 w-4" />
+                          <span>{ministry.ministry_leaders?.join(', ')}</span>
+                        </div>
                       </div>
+                      <Button className="w-full bg-black text-white hover:bg-gray-800">
+                        MORE INFORMATION
+                      </Button>
                     </div>
-                    <Button className="w-full bg-black text-white hover:bg-gray-800">
-                      MORE INFORMATION
-                    </Button>
-                  </div>
-                </Link>
+                  </Link>
               );
             })}
           </div>

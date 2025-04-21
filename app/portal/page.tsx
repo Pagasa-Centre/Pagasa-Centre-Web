@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { getToken, hasRole } from '@/lib/auth';
 import {apiUrl} from "@/lib/api";
-import {Approval, GetAllApprovalsResponse, GetAllPendingApprovalsResponse} from "@/types/approvals";
+import {Approval, GetAllPendingApprovalsResponse} from "@/types/approvals";
 
 
 

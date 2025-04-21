@@ -2,11 +2,15 @@ export interface Ministry {
     id: string;
     outreach_id: string;
     name: string;
-    description: string;
+    short_description: string;
+    long_description:string;
+    thumbnail_url:string;
     day: string;
     start_time?: string;
     end_time?: string;
     meeting_location?: string;
+    ministry_leaders?:string[];
+    activities: string[];
 }
 
 export interface GetAllMinistriesResponse {
