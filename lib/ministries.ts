@@ -1,4 +1,5 @@
 import { DivideIcon as LucideIcon, Music, Camera, Heart, Baby, Palette, BookOpen, Mic2, Truck } from 'lucide-react';
+import {apiUrl} from "@/lib/api";
 
 export type Ministry = {
   slug: string;
@@ -104,8 +105,10 @@ export const ministries: Ministry[] = [
   }
 ];
 
-export function getMinistryBySlug(slug: string): Ministry | undefined {
-  return ministries.find((ministry) => ministry.slug === slug);
+export async function getMinistryBySlug(id: string) {
+  const res = await fetch(apiUrl('/ministry'), { cache: 'no-store' });
+  const data = await res.json();
+  return (data.ministries || []).find((m: any) => m.id === id);
 }
 
 export function getRelatedMinistries(currentSlug: string, count: number = 3): Ministry[] {

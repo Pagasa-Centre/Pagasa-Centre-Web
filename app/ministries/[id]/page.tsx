@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { Calendar, Clock, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {apiUrl} from "@/lib/api";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   const res = await fetch(apiUrl('/ministry'), { cache: 'no-store' });
@@ -99,6 +100,17 @@ export default async function MinistryPage(props: MinistryPageProps) {
               <p className="text-gray-600 text-lg leading-relaxed">
                 {ministry.long_description}
               </p>
+            </div>
+            {/* Apply Button */}
+            <div className="mt-12 flex justify-center">
+              <Link href={`/ministries/${params.id}/apply`}>
+              <Button
+                  size="lg"
+                  className="bg-black text-white hover:bg-green-600"
+              >
+                APPLY
+              </Button>
+              </Link>
             </div>
           </div>
         </section>
